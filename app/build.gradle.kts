@@ -70,19 +70,22 @@ dependencies {
 
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            artifact("$buildDir/outputs/aar/app-release.aar")
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
 
-            groupId = "pro.progr"
-            artifactId = "fallingdiamonds"
-            version = "0.0.1-alpha"
+                groupId = "pro.progr"
+                artifactId = "fallingdiamonds"
+                version = "0.0.1-alpha"
+            }
         }
-    }
-    repositories {
-        maven {
-            url = uri("file://${buildDir}/repo")
+
+        repositories {
+            maven {
+                url = uri("file://${buildDir}/repo")
+            }
         }
     }
 }
