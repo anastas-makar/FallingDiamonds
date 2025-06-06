@@ -5,38 +5,5 @@ pluginManagement {
         mavenCentral()
     }
 }
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-//            url "https://maven.pkg.github.com/anastas-makar/Flow"
-//            credentials {
-//                credentials {
-//                    username = System.getenv("GITHUB_USERNAME")
-//                    password = System.getenv("GITHUB_TOKEN")
-//                }
-//            }
-            url "file:C:\\Users\\KNS\\StudioProjects\\flow\\flow\\build\\repo"
-
-        }
-        maven {
-            url "file:C:\\Users\\KNS\\AndroidStudioProjects\\OwlGame\\app\\build\\repo"
-        }
-        maven {
-            url "https://maven.pkg.github.com/anastas-makar/DiamondApi"
-            credentials {
-                credentials {
-                    username = System.getenv("GITHUB_USERNAME")
-                    password = System.getenv("GITHUB_TOKEN")
-                }
-            }
-        }
-    }
-}
-rootProject.name = "Brilliant Flow"
+rootProject.name = "Falling Diamonds"
 include ':app'
-include ':brightcards'
-include ':lists'
-include ':fallingdiamonds'
