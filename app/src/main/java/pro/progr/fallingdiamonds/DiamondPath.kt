@@ -8,8 +8,6 @@ class DiamondPath(
     val xOffset : Float? = null,
     val secondYOffset : Float? = null
 ) {
-    //todo: это поле использовать надо было
-    val fallDown = mutableStateOf(false)
 
     val dropDown = mutableStateOf(false)
 }
