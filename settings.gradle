@@ -5,5 +5,18 @@ pluginManagement {
         mavenCentral()
     }
 }
+dependencyResolutionManagement {
+    repositories {
+        maven {
+            url "https://maven.pkg.github.com/anastas-makar/DiamondApi"
+            credentials {
+                credentials {
+                    username = System.getenv("GITHUB_USERNAME")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+    }
+}
 rootProject.name = "Falling Diamonds"
 include ':app'
