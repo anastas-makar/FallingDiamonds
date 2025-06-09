@@ -1,5 +1,3 @@
-import java.util.Properties
-import java.io.FileInputStream
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -53,6 +51,13 @@ android {
 repositories {
     google()
     mavenCentral()
+    maven {
+        url = uri("https://maven.pkg.github.com/anastas-makar/DiamondApi")
+        credentials {
+            username = System.getenv("GITHUB_USERNAME")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 dependencies {
     implementation("androidx.compose.ui:ui:1.5.4")
