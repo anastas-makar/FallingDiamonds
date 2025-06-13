@@ -25,6 +25,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import pro.progr.diamondapi.AddDiamondsInterface
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
@@ -35,7 +36,7 @@ fun DraggableDiamond(
     slotNum: Int,
     onDragStarted: () -> Unit,
     onAnimationFinished: () -> Unit,
-    viewModel: DiamondViewModelInterface
+    viewModel: AddDiamondsInterface
 ) {
     val coroutineScope = rememberCoroutineScope()
     val offsetY = remember { Animatable(0f) }
@@ -104,7 +105,7 @@ fun DraggableDiamond(
                     onDragStopped = {
                         onDragStarted()
                         if (diamondPath.value != null && shouldFindSlot.value) {
-                            viewModel.addDiamond()
+                            viewModel.add(1)
                             coroutineScope.launch {
                                 offsetY.animateTo(
                                     targetValue = diamondPath.value!!.firstYOffset,

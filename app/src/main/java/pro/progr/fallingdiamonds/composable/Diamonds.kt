@@ -13,10 +13,11 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
+import pro.progr.diamondapi.AddDiamondsInterface
 import kotlin.random.Random
 
 @Composable
-fun Diamonds(viewModel: DiamondViewModelInterface) {
+fun Diamonds(viewModel: AddDiamondsInterface) {
     val rowWidth = remember { mutableStateOf(0) }
 
     val boxHeight = remember { mutableStateOf(0) }
