@@ -25,17 +25,6 @@ fun SundukDrawerWidget(diamondsTotal: State<Int>,
     Column(modifier = Modifier.fillMaxWidth().clickable {
         navFun()
     }) {
-        Row(modifier = Modifier.align(Alignment.CenterHorizontally))  {
-            Text(text = "В сундуке ${diamondsTotal.value}", style = MaterialTheme.typography.h6)
-            Icon(
-                painter = painterResource(id = R.drawable.ic_diamond),
-                contentDescription = "Иконка бриллианта",
-                tint = Color.Unspecified,
-                modifier = Modifier
-                    .size(24.dp)
-                    .padding(4.dp)
-            )
-        }
 
         Image(
             painter = painterResource(id = R.drawable.sunduk_closed),
@@ -45,11 +34,17 @@ fun SundukDrawerWidget(diamondsTotal: State<Int>,
                 .align(Alignment.CenterHorizontally)
         )
 
-        Text(text = "Открыть сундук",
-            style = MaterialTheme.typography.h6,
-            color = MaterialTheme.colors.onSurface,
-            modifier = Modifier
-                .align(Alignment.CenterHorizontally))
+        Row(modifier = Modifier.align(Alignment.CenterHorizontally))  {
+            Text(text = "Открыть сундук с ${diamondsTotal.value}", style = MaterialTheme.typography.h6)
+            Icon(
+                painter = painterResource(id = R.drawable.ic_diamond),
+                contentDescription = "Иконка бриллианта",
+                tint = Color.Unspecified,
+                modifier = Modifier
+                    .size(24.dp)
+                    .padding(4.dp)
+            )
+        }
 
     }
 }
