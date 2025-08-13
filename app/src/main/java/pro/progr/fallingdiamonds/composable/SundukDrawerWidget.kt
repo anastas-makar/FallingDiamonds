@@ -22,7 +22,9 @@ import pro.progr.fallingdiamonds.R
 @Composable
 fun SundukDrawerWidget(diamondsTotal: State<Int>,
                        navFun : () -> Unit) {
-    Column(modifier = Modifier.fillMaxWidth().clickable {
+    Column(modifier = Modifier.fillMaxWidth()
+        .padding(10.dp)
+        .clickable {
         navFun()
     }) {
 
