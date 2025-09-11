@@ -105,8 +105,8 @@ fun DraggableDiamond(
                     onDragStopped = {
                         onDragStarted()
                         if (diamondPath.value != null && shouldFindSlot.value) {
-                            viewModel.add(1)
                             coroutineScope.launch {
+                                viewModel.add(1)
                                 offsetY.animateTo(
                                     targetValue = diamondPath.value!!.firstYOffset,
                                     animationSpec = tween(durationMillis = 1500),
