@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -22,30 +22,34 @@ import pro.progr.fallingdiamonds.R
 @Composable
 fun SundukDrawerWidget(diamondsTotal: State<Int>,
                        navFun : () -> Unit) {
-    Column(modifier = Modifier.fillMaxWidth()
-        .padding(10.dp)
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .padding(4.dp)
         .clickable {
-        navFun()
-    }) {
+            navFun()
+        }) {
 
         Image(
             painter = painterResource(id = R.drawable.sunduk_closed),
             contentDescription = "Сундук",
             modifier = Modifier
-                .size(200.dp)
+                .fillMaxWidth()
                 .align(Alignment.CenterHorizontally)
         )
 
-        Row(modifier = Modifier.align(Alignment.CenterHorizontally))  {
-            Text(text = "Открыть сундук с ${diamondsTotal.value}", style = MaterialTheme.typography.h6)
-            Icon(
-                painter = painterResource(id = R.drawable.ic_diamond),
-                contentDescription = "Иконка бриллианта",
-                tint = Color.Unspecified,
-                modifier = Modifier
-                    .size(24.dp)
-                    .padding(4.dp)
-            )
+        Column(modifier = Modifier.align(Alignment.CenterHorizontally))  {
+            Text(text = "Открыть сундук", modifier = Modifier.align(Alignment.CenterHorizontally))
+            Row(modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally)) {
+                Text(text = "с ${diamondsTotal.value}")
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_diamond),
+                    contentDescription = "Иконка бриллианта",
+                    tint = Color.Unspecified,
+                    modifier = Modifier
+                        .padding(2.dp)
+                        .size(12.dp)
+                )
+            }
         }
 
     }
