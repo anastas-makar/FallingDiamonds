@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -82,7 +83,7 @@ fun DraggableDiamond(
 
         Image(
             painter = painterResource(id = drawableId),
-            contentDescription = "1 бриллиант",
+            contentDescription = stringResource(R.string.falling_diamonds_diamond),
             modifier = Modifier
                 .fillMaxWidth()
                 .offset {

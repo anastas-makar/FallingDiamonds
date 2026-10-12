@@ -1,0 +1,10 @@
+<resources>
+    <string name="falling_diamonds_back">Назад</string>
+    <string name="falling_diamonds_chest">Сундук</string>
+    <string name="falling_diamonds_chest_title">Сундук: %1$d</string>
+    <string name="falling_diamonds_diamond">1 бриллиант</string>
+    <string name="falling_diamonds_diamond_icon">Бриллиант</string>
+    <string name="falling_diamonds_drawer_open_chest">Открыть сундук</string>
+    <string name="falling_diamonds_drawer_diamond_count">с %1$d</string>
+    <string name="falling_diamonds_drop_prompt">Вы сделали что-то хорошее? Бросьте бриллианты в сундук!</string>
+</resources>

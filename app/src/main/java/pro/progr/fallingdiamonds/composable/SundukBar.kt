@@ -13,6 +13,7 @@ import androidx.compose.runtime.State
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import pro.progr.fallingdiamonds.R
 
@@ -20,10 +21,10 @@ import pro.progr.fallingdiamonds.R
 fun SundukBar(backFun: () -> Unit, diamondsTotal: State<Int>) {
     TopAppBar(
         title = {
-            Text(text = "Сундук с ${diamondsTotal.value}")
+            Text(text = stringResource(R.string.falling_diamonds_chest_title, diamondsTotal.value))
             Icon(
                 painter = painterResource(id = R.drawable.ic_diamond),
-                contentDescription = "Todo",
+                contentDescription = stringResource(R.string.falling_diamonds_diamond_icon),
                 tint = Color.Unspecified,
                 modifier = Modifier
                     .size(24.dp)
@@ -32,7 +33,7 @@ fun SundukBar(backFun: () -> Unit, diamondsTotal: State<Int>) {
         },
         navigationIcon = {
             IconButton(onClick = { backFun() }) {
-                Icon(Icons.Filled.ArrowBack, contentDescription = "Назад")
+                Icon(Icons.Filled.ArrowBack, contentDescription = stringResource(R.string.falling_diamonds_back))
             }
         },
         backgroundColor = Color.Transparent,

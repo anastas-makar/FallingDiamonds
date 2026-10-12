@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import pro.progr.diamondapi.AddDiamondsInterface
@@ -117,7 +118,7 @@ fun Diamonds(viewModel: AddDiamondsInterface) {
 
         Image(
             painter = painterResource(id = R.drawable.sunduk),
-            contentDescription = "Сундук",
+            contentDescription = stringResource(R.string.falling_diamonds_chest),
             modifier = Modifier.align(Alignment.BottomCenter)
         )
 
@@ -189,7 +190,7 @@ fun Diamonds(viewModel: AddDiamondsInterface) {
 
         Image(
             painter = painterResource(id = R.drawable.polsunduka),
-            contentDescription = "Сундук",
+            contentDescription = stringResource(R.string.falling_diamonds_chest),
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .onGloballyPositioned { coordinates ->

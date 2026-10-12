@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import pro.progr.fallingdiamonds.R
 
@@ -32,7 +33,7 @@ fun SundukDrawerWidget(diamondsTotal: State<Int>,
 
         Image(
             painter = painterResource(id = R.drawable.sunduk_closed),
-            contentDescription = "Сундук",
+            contentDescription = stringResource(R.string.falling_diamonds_chest),
             contentScale = ContentScale.FillWidth,
             modifier = Modifier
                 .fillMaxWidth()
@@ -40,12 +41,15 @@ fun SundukDrawerWidget(diamondsTotal: State<Int>,
         )
 
         Column(modifier = Modifier.padding(5.dp))  {
-            Text(text = "Открыть сундук", modifier = Modifier.align(Alignment.CenterHorizontally))
+            Text(
+                text = stringResource(R.string.falling_diamonds_drawer_open_chest),
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
             Row(modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally)) {
-                Text(text = "с ${diamondsTotal.value}")
+                Text(text = stringResource(R.string.falling_diamonds_drawer_diamond_count, diamondsTotal.value))
                 Icon(
                     painter = painterResource(id = R.drawable.ic_diamond),
-                    contentDescription = "Иконка бриллианта",
+                    contentDescription = stringResource(R.string.falling_diamonds_diamond_icon),
                     tint = Color.Unspecified,
                     modifier = Modifier
                         .padding(2.dp)

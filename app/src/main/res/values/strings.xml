@@ -1,0 +1,10 @@
+<resources>
+    <string name="falling_diamonds_back">Back</string>
+    <string name="falling_diamonds_chest">Chest</string>
+    <string name="falling_diamonds_chest_title">Chest: %1$d</string>
+    <string name="falling_diamonds_diamond">1 diamond</string>
+    <string name="falling_diamonds_diamond_icon">Diamond</string>
+    <string name="falling_diamonds_drawer_open_chest">Open chest</string>
+    <string name="falling_diamonds_drawer_diamond_count">with %1$d</string>
+    <string name="falling_diamonds_drop_prompt">Have you done something good? Drop diamonds in the chest!</string>
+</resources>

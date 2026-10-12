@@ -14,15 +14,18 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import kotlinx.coroutines.launch
 import pro.progr.diamondapi.AccumulateInterface
 import pro.progr.fallingdiamonds.Diamonds
+import pro.progr.fallingdiamonds.R
 
 @Composable
 fun SundukScreen(backFun : () -> Unit,
                  diamondViewModel : AccumulateInterface) {
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
+    val dropPrompt = stringResource(R.string.falling_diamonds_drop_prompt)
 
     Scaffold(
         modifier = Modifier
@@ -50,7 +53,7 @@ fun SundukScreen(backFun : () -> Unit,
 
                 LaunchedEffect(Unit) {
                     scope.launch {
-                        snackbarHostState.showSnackbar("Вы сделали что-то хорошее? Бросьте бриллианты в сундук!")
+                        snackbarHostState.showSnackbar(dropPrompt)
                     }
                 }
             }
