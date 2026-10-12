@@ -15,6 +15,7 @@ import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import pro.progr.fallingdiamonds.R
@@ -32,12 +33,13 @@ fun SundukDrawerWidget(diamondsTotal: State<Int>,
         Image(
             painter = painterResource(id = R.drawable.sunduk_closed),
             contentDescription = "Сундук",
+            contentScale = ContentScale.FillWidth,
             modifier = Modifier
                 .fillMaxWidth()
                 .align(Alignment.CenterHorizontally)
         )
 
-        Column(modifier = Modifier.align(Alignment.CenterHorizontally))  {
+        Column(modifier = Modifier.padding(5.dp))  {
             Text(text = "Открыть сундук", modifier = Modifier.align(Alignment.CenterHorizontally))
             Row(modifier = Modifier.wrapContentWidth(Alignment.CenterHorizontally)) {
                 Text(text = "с ${diamondsTotal.value}")
